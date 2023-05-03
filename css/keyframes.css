@@ -1,0 +1,18 @@
+@keyframes scaleAnim {
+	0% {
+		transform: translateY(-100%) scaleY(0);
+	}
+
+	100% {
+		transform: translateY(0) scaleY(1);
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}

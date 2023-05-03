@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Jarvis</title>
+</head>
+<body class="main-content">
+
+	<header class="section sec1 header active" id='home'>
+		<div class="header-content">
+			<div class="left-header">
+				<h1> J.A.R.V.I.S. v0.0.2</h1>
+				<p>Привет! Я Jarvis - твой личный голосовой ассистент. Я готов помочь тебе в решении самых разных задач, будь то поиск информации в интернете, составление списков дел, планирование расписания и многое другое. Просто скажи мне, что тебе нужно, и я сделаю это за тебя!</p>
+				<div class="header__icons">
+					<a class='github' href="https://github.com/Priler/jarvis"><i class="fa-brands fa-github"></i></a>
+					<a class='telegram' href="https://t.me/howdyho_official"><i class="fa-brands fa-telegram"></i></a>
+					<a class='youtube' href="https://www.youtube.com/@HowdyhoNet"><i class="fa-brands fa-youtube"></i></a>
+				</div>
+				<a class="btn-primary" href="https://github.com/Priler/jarvis/releases/download/beta/jarvis-app_0.0.2_x64_en-US.msi" id="download-button">Скачать <i class="fa-solid fa-download"></i></a>
+			</div>
+			<div class="right-header">
+				<div class="arc_reactor">
+					<div class="case_container">
+						<div class="e7">
+							<div class="semi_arc_3 e5_1">
+							<div class="semi_arc_3 e5_2">
+								<div class="semi_arc_3 e5_3">
+								<div class="semi_arc_3 e5_4">
+								</div>
+								</div>
+							</div>
+							</div>
+							<div class="core2"></div>
+						</div>
+						<ul class="marks">
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+							<li></li><li></li><li></li><li></li><li></li><li></li>
+						</ul>
+					</div>
+				</div>						
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="section sec2 command" id="command">
+			<div class="main-title">
+				<h2>Command <span>Jarvis</span></h2>
+			</div>
+			<div class="command-container">
+				<div class="left-command">
+					<h3>Установка AutoHotkey</h3>
+					<p>Для работы голосового ассистента Jarvis с командами на вашем компьютере требуется установить AutoHotkey. Это бесплатный инструмент для автоматизации действий на компьютере. Вы можете скачать его с официального сайта <a href="https://www.autohotkey.com/">https://www.autohotkey.com/</a>.</p>
+					<img src="img/autohotkey-installation.png" alt="Установка AutoHotkey">
+					<h3>Использование команд в Jarvis</h3>
+					<p>Чтобы использовать команды в Jarvis, необходимо создать скрипт на языке AutoHotkey, скомпилировать его в исполняемый файл (exe) и добавить его в Jarvis. Вот пример скрипта, который открывает страницу Google в браузере:</p>
+
+					<div class="code-block">
+						<pre>
+						  <code class="language-autohotkey">
+							<span class="comment">#NoEnv</span>  ; Recommended for performance and compatibility with future AutoHotkey releases.
+							<span class="comment">; #Warn</span>  ; Enable warnings to assist with detecting common errors.
+							<span class="comment">SendMode Input</span>  ; Recommended for new scripts due to its superior speed and reliability.
+							<span class="comment">SetWorkingDir %A_ScriptDir%</span>  ; Ensures a consistent starting directory.
+
+							; Open Google in the default browser
+							<span class="comment">^g::</span>
+							<span class="comment">Run,</span> <span class="string">https://www.google.com/</span>
+							<span class="comment">Return</span>
+						  </code>
+						</pre>
+					</div>
+
+					<p>Затем вы можете скомпилировать этот скрипт в исполняемый файл, используя AutoHotkey Compiler. После этого вы можете добавить исполняемый файл в Jarvis и вызывать его с помощью голосовой команды.</p>
+				</div>
+				<div class="right-command">
+					<h3>Файл команд .yaml</h3>
+					<p>Чтобы добавить новые команды для голосового ассистента Jarvis, вам необходимо изменить файл .yaml. В этом файле вы можете описать действия, которые должен выполнять Jarvis при определенной команде голоса. Например, если вы хотите, чтобы Jarvis открыл браузер по команде "открой браузер", вам нужно добавить следующий код в файл .yaml:</p>
+
+					<div class="code-block-yaml">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Run browser.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- открой браузер 
+								- запусти браузер 
+								- открой гугл хром 
+								- гугл хром
+						  </code>
+						</pre>
+					</div>
+
+					<p>В этом примере мы используем AHK для выполнения команды "открыть браузер" и добавляем несколько фраз, которые Jarvis будет распознавать и связывать с этой командой. Если вам нужно добавить новую команду, просто добавьте новый блок кода в файл .yaml, описывающий действия и фразы, связанные с этой командой.</p>
+					<p>Когда Jarvis ожидает вашей команды, вы можете произнести ключевое слово, за которым следует команда. Например, "Jarvis, открой Google". Jarvis распознает вашу команду и запустит скрипт AutoHotkey, который откроет страницу Google в браузере.</p>
+
+					<h3 class='down-footer'>©2023. Автор Проекта: Abraham Tugalov 
+						<span class='github-span'><a href="https://github.com/Priler/jarvis">Github репозиторий</a> <span>проекта.</span></span>
+					</h3>
+				</div>
+			</div>
+		</section>
+
+		<section class="section sec3 setting" id="setting">
+			<div class="main-title">
+				<h2>Editor <span>Jarvis</span></h2>
+				<p>Здесь реализован пример редактора команд для jarvis</p>
+			</div>
+
+			<div class="folder-tree">
+				<div class="folder">
+					<span class="toggle"><i class="fa-solid fa-plus"></i></span>
+					<span class="icon"><i class="fa-solid fa-folder"></i></span>
+					<span class="name">jarvis</span>
+					<div class="subfolders hidden">
+						<div class="folder">
+							<span class="toggle"><i class="fa-solid fa-plus"></i></span>
+							<span class="icon"><i class="fa-solid fa-folder"></i></span>
+							<span class="name">Command</span>
+							<div class="subfolders hidden">
+								<div class="folder">
+									<span class="toggle"><i class="fa-solid fa-plus"></i></span>
+									<span class="icon"><i class="fa-solid fa-folder"></i></span>
+									<span class="name">Google</span>
+									<div class="subfolders hidden">
+										<div class="folder">
+											<span class="toggle"><i class="fa-solid fa-plus"></i></span>
+      										<span class="icon"><i class="fa-solid fa-folder"></i></span>
+											<span class="name">Ahk</span>
+											<div class="subfolders hidden">
+												<div class="file script">
+													<span class="icon"><i class="fa-solid fa-file-code"></i></span>
+													<span class="name">Run google.ahk</span>
+												</div>
+											</div>
+										</div>
+										<div class="folder">
+											<span class="icon"><i class="fa-solid fa-file-alt"></i></span>
+											<span class="name">command.yaml</span>
+											<div class="subfolders hidden">
+												<div class="file script">
+													<span class="icon"><i class="fa-solid fa-file-code"></i></span>
+													<span class="name">Command.yaml</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>		
+			
+			<div class="modal">
+				<div class="modal-content">
+				  <span class="close">&times;</span>
+				  <h2>Run google.ahk</h2>
+				  <textarea id="script-input" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+				  <button id="run-script-btn">Save</button>
+				</div>
+			</div>
+			   
+		</section>
+
+		<section class="section sec4" id="helps">
+			<div class="helps-content">
+				<div class="main-title">
+					<h2>Answer <span>Jarvis</span></h2>
+				</div>
+				<div class="faq-container">
+					<div class="faq-item">
+					  <div class="faq-question">
+						<h3>Как запустить jarvis при запуске компютера?</h3>
+						<button class="faq-toggle"><i class="fa-solid fa-plus"></i></button>
+					  </div>
+					  <div class="faq-answer">
+						<p>Нажмите сочетание клавиш WIN+R, чтобы открыть окно "Выполнить". 
+							Введите "shell:startup" в поле "Открыть" и нажмите "ОК". Это откроет папку "Автозагрузка".
+							Откройте папку с ярлыком программы Джарвиса, который вы хотите запустить при старте компьютера
+							Скопируйте ярлык программы, используя команду "Копировать" или сочетание клавиш CTRL+C.
+							Вставьте ярлык программы в папку "Автозагрузка", используя команду "Вставить" или сочетание клавиш CTRL+V.
+							Перезагрузите компьютер, чтобы убедиться, что Jarvis запускается при старте.
+							Если все выполнено правильно, то при следующем запуске компьютера Jarvis автоматически запустится и будет готов к использованию.
+						</p>
+					  </div>
+					</div>
+					<div class="faq-item">
+					  <div class="faq-question">
+						<h3>Что делать если какие-то программы не закрываются скриптом или что то не работает так как должно?</h3>
+						<button class="faq-toggle"><i class="fas fa-plus"></i></button>
+					  </div>
+					  <div class="faq-answer">
+						<p>1. Убедитесь, что программа имеет правильный путь к исполняемому файлу в скрипте.
+
+							<br>2. Проверьте, что программа не заблокирована другими процессами или службами, например, антивирусом или защитным программным обеспечением.
+							
+							<br>3. Если программа не закрывается, когда скрипт запускается не от имени администратора, попробуйте запустить скрипт от имени администратора.
+							
+							<br>Если все вышеперечисленные действия не помогают, можно попробовать изменить свойства экзешника программы, чтобы она запускалась всегда от имени администратора. Для этого нужно:
+							
+							<br>1. Найти исполняемый файл программы (обычно это файл с расширением .exe) и щелкнуть на нем правой кнопкой мыши.
+							
+							<br>2. В контекстном меню выбрать "Свойства".
+							
+							<br>3. Перейти на вкладку "Совместимость".
+							
+							<br>4. Поставить галочку "Запускать эту программу от имени администратора".
+							
+							<br>5. Нажать "ОК" для сохранения изменений.</p>
+					  </div>
+					</div>
+					<div class="faq-item">
+						<div class="faq-question">
+						  <h3>Как узнать имя процесса нужной вам программы?</h3>
+						  <button class="faq-toggle"><i class="fa-solid fa-plus"></i></button>
+						</div>
+						<div class="faq-answer">
+						  <p>1. Открываем командную строку ("WIN+R", вводим "cmd", нажимаем "Enter").
+
+							<br>2. Вводим команду "tasklist" и нажимаем "Enter". Эта команда выведет список всех запущенных процессов на компьютере.
+
+							<br>3. Выбираем запущенное приложение -> ПКМ -> Свойства и копируем значение из окошка названия
+						  </p>
+						</div>
+					</div>
+					<div class="faq-item">
+						<div class="faq-question">
+						  <h3>Почему у меня запускается командная строка вместе с программой?</h3>
+						  <button class="faq-toggle"><i class="fa-solid fa-plus"></i></button>
+						</div>
+						<div class="faq-answer">
+						  <p>1. Потому что jarvis находится в бета-тесте и разработчику нужно видеть какие ошибки выдает программа во время тестирования, а в этом хорошо помогает командная строка
+
+							<br>2. Командная строка исчезнет когда будет релиз официальной версии а не бета-теста
+						  </p>
+						</div>
+					</div>
+					<div class="faq-item">
+						<div class="faq-question">
+						  <h3>Почему Джарвис столько жрет и много занимает оперативной памяти?</h3>
+						  <button class="faq-toggle"><i class="fa-solid fa-plus"></i></button>
+						</div>
+						<div class="faq-answer">
+						  <p>1. Относительно использования Microsoft Edge WebView2, это может быть связано с тем, что WebView2 использует движок Chromium, который может потреблять дополнительные ресурсы, но в то же время он может обеспечить лучшую производительность и совместимость с современными веб-технологиями.
+						  </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section sec4" id="example">
+			<div class="example-command-content">
+				<div class="main-title">
+					<h2>Example <span>command</span></h2>
+					<p>Ниже приведены некоторые примеры команд AHK и YAML.</p>
+				</div>
+				<div class="example-command">
+					<h3>1. Запуск ютуба</h3>
+					<p>Эта команда запускает ютуб в браузере который стоит по умолчанию. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Open Google in the default browser
+							<span class="comment">Run,</span> <span class="string">"https://youtube.com"</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Run youtube.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								- ok4
+								<span class="string">phrases:</span>
+								- открой ютуб
+								- ютуб
+								- запусти ютуб
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>2. Запуск переводчика</h3>
+					<p>Эта команда запускает переводчик в браузере который стоит по умолчанию. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Open Translator in the default browser
+							<span class="comment">Run,</span> <span class="string">"https://www.deepl.com"</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Run translator.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								- ok4
+								<span class="string">phrases:</span>
+								- открой переводчик
+								- переводчик
+								- запусти переводчик
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>3. Обновления страницы в браузере</h3>
+					<p>Эта команда перезапускает страницу в браузере. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Update tab in browser
+							<span class="comment">Send,</span> <span class="string">{<span class="comment">f5</span>}</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Update tab.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								- ok4
+								<span class="string">phrases:</span>
+								- перезапусти страницу
+								- перезапусти
+								- обнови страницу
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>4. Запуск discord</h3>
+					<p>Эта команда запускает дискорд на пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Run discord in pc
+							<span class="comment">Run</span> <span class="string">shell:AppsFolder\com.squirrel.Discord.Discord</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Open discord.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- открой дискорд
+								- запусти дискорд
+								- включи дискорд
+								- дискорд
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>4. Выключить звук</h3>
+					<p>Эта команда выключает звук на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							<span class="comment">#NoEnv</span> ; Recommended for performance and compatibility with future AutoHotkey releases.
+							<span class="comment">; #Warn</span> ; Enable warnings to assist with detecting common errors.
+							<span class="comment">SendMode Input</span> ; Recommended for new scripts due to its superior speed and reliability.
+							<span class="comment">SetWorkingDir %A_ScriptDir%</span> ; Ensures a consistent starting directory.
+
+							<span class="comment">Send</span> <span class="string">{<span class="comment">Volume_Mute</span>}</span> ; Mute/unmute the master volume.
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Mute volum.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- выключи звук
+								- беззвучный режим
+								- режим без звука
+								- отключи звук
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>5. Поставить на паузу</h3>
+					<p>Эта команда ставит на паузу видео. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Pause in video
+							<span class="comment">Send, <span class="string">{<span class="comment">Space down</span>}{<span class="comment">Space up</span>}</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/pause.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- пауза
+								- поставь на паузу
+								- сними с паузы
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>6. Полноэкранный режим</h3>
+					<p>Эта команда запускает полноэкранный режим у видео. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Fullscreen in video
+							<span class="comment">Send, <span class="string">{<span class="comment">f</span>}</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/fullscreen.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- во весь экран
+								- открой во весь экран
+								- полноэкранный режим
+								- выйди из полноэкранного режима
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>7. Включи следующее видео</h3>
+					<p>Эта команда запускает следующее в списке. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Next video in youtube
+							<span class="comment">Send, <span class="string">+<span class="comment">n</span></span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Next video.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- следующее видео
+								- включи следующее видео
+								- переключи на следующее видео
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>8. Cделай громче</h3>
+					<p>Эта команда делает звук по громче. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Sound up in pc
+							<span class="comment">Send, <span class="string">{<span class="comment">Volume_Up 2.7</span>}</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Sound up.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- сделай громче
+								- громче
+								- сделай погромче
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>9. Запустить Steam</h3>
+					<p>Эта команда запускает steam на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Open steam in pc
+							<span class="comment">WinKill</span>, <span class="string">AHK_exe Steam.exe</span>
+							<span class="comment">Process, Close,</span> <span class="string">Steam.exe</span>
+
+							<span class="comment">Run, steam:<span class="string">//</span>open<span class="string">/</span>bigpicture
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Open steam.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- включи игровой режим
+								- перейди в игровой режим
+								- я хочу поиграть
+								- включи стим
+								- запусти стим
+								- открой стим
+								- стим
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>10. Закрой Steam</h3>
+					<p>Эта команда закривает steam на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Close steam in pc
+							<span class="comment">WinKill</span>, <span class="string">AHK_exe Steam.exe</span>
+							<span class="comment">Process, Close,</span> <span class="string">Steam.exe</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Close steam.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- рабочий режим
+								- вернись в рабочий режим
+								- отключи игровой режим
+								- выйди из игрового режима
+								- выход с игрового режима
+								- рабочее пространство
+								- выключи игровой режим
+								- выключи стим
+								- отключи стим
+								- выйди из стима
+								- закрой стим
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>11. Запуск telegram</h3>
+					<p>Эта команда запускает telegram на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Open telegram in pc
+							<span class="string">user = %</span> <span class="commnet">A_UserName</span>
+
+							<span class="comment">Run</span> <span class="string">C:\Users\%user%\AppData\Roaming\Telegram Desktop\Telegram.exe</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Open telegram.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- запусти телеграмм
+								- открой телеграмм
+								- включи телеграмм
+								- запусти телеграм
+								- открой телеграм
+								- включи телеграм
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>12. Закрой telegram</h3>
+					<p>Эта команда закрывает telegram на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Close telegram in pc
+
+							<span class="comment">WinKill</span>, <span class="string">AHK_exe Telegram.exe</span>
+							<span class="comment">Process, Close,</span> <span class="string">Telegram.exe</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Close telegram.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- закрой телеграмм
+								- выключи телеграмм
+								- отключи телеграмм
+								- закрой телеграм
+								- выключи телеграм
+								- отключи телеграм
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>13. Погода</h3>
+					<p>Эта команда запускает погоду на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Open weather in pc
+
+							<span class="comment">Run</span> <span class="string">shell:AppsFolder\Microsoft.BingWeather_8wekyb3d8bbwe!App</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Open weather.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- открой погоду
+								- покажи погоду
+								- запусти погоду
+								- погода
+								- какая сегодня погода
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>14. Скриншот</h3>
+					<p>Эта команда делает скриншот на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Screenshot in pc
+
+							<span class="comment">Send</span>, #<span class="string">{<span class="comment">PrintScreen</span>}</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/screenshot.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- сделай скриншот
+								- сделай снимок экрана
+								- сними экран
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>15. Очистка корзины</h3>
+					<p>Эта команда почистит корзину на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Empty trash in pc
+
+							<span class="string">FileRecycleEmpty</span>,
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Empty trash.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- очисти корзину
+								- почисти корзину
+								- очистка корзины
+						  </code>
+						</pre>
+					</div>
+				</div>
+
+				<div class="main-title">
+					<p>А больше команд вы можете найти <a href="https://github.com/Vasasago/commands-for-jarvis">здесь</a></p>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+		<div class="navbar">
+			<div class="control control-1 active-btn" data-id="home">
+				<span>Home</span>				
+				<i class="fa-solid fa-house"></i>
+			</div>
+			<div class="control control-2" data-id="command">
+				<span>Commands</span>				
+				<i class="fa-solid fa-terminal"></i>
+			</div>
+			<div class="control control-3" data-id="setting">
+				<span>Settings</span>				
+				<i class="fa-solid fa-gear"></i>
+			</div>
+			<div class="control control-4" data-id="helps">
+				<span>Helps</span>				
+				<i class="fa-regular fa-circle-question"></i>
+			</div>
+			<div class="control control-5" data-id="example">
+				<span>Command_Exapmle</span>				
+				<i class="fa-solid fa-pen-nib"></i>
+			</div>
+			<a href='https://t.me/js_toop' class="contact-controll control-7">
+				<span>Автор_сайта</span>				
+				<i class="fa-solid fa-user"></i>
+			</a>
+		</div>
+
+		<div class="theme-btn" onclick='toggleIcon()'>
+			<span class='themeBtn-tooltip'>Theme</span>
+			<i id="icon" class="fa-solid fa-moon"></i>
+		</div>
+		
+		<audio id="click-sound" src="sound/ok2.wav"></audio>
+
+	<script src='js/app.js'></script>
+	<script src='js/theme.js'></script>
+	<script src='js/sphere.js'></script>
+	<script src='js/command.js'></script>
+	<script src='js/questions.js'></script>
+	<script src='js/audio.js'></script>
+	<script src='js/main.js'></script>
+	<script src="https://kit.fontawesome.com/27c5a00e8d.js" crossorigin="anonymous"></script>
+</body>
+</html>

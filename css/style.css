@@ -14,16 +14,33 @@ body {
 	transition: all 0.4s ease-in-out;
 }
 
+body::-webkit-scrollbar {
+	width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #13111C;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #211F2D;
+	border-radius: 20px;
+}
+
 :root {
 	--btn-icon-white: #fff;
-	--btn-home-icon:#003049;
+	--btn-home-icon: #181622;
 	--fag-black: #fff;
-	--answer-color: #003049;
-	--paragraf: #f5f5f5;
-	--primary: #406ff3;
-	--title: #d62828;
-	--background: #03071e;
-	--white: #003049;
+	--answer-color: #181622;
+	--paragraf: #a1a0ab;
+	--primary: #211f2d;
+	--main-title-primary: #312e42;
+	--control-primary-color: #fff;
+	--title: #ffffff;
+	--left-header-p: #a1a0ab;
+	--background: #13111c;
+	--white: #181622;
+	--control-white: #fff;
 	--text: #fff;
 	--border-radius: 10px;
 	--spacer: 1rem;
@@ -34,7 +51,7 @@ body {
 
 .light-mode {
 	--btn-icon-white: #fff;
-	--btn-home-icon:#406ff3;
+	--btn-home-icon: #406ff3;
 	--fag-black: #000;
 	--background: #eaeef6;
 	--spacer: 1rem;
@@ -69,10 +86,9 @@ section {
 .section {
 	transform: translateY(-100%) scale(0);
 	transition: all 0.4s ease-in-out;
-	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat-back.svg');
-	background-position: center;
-	background-repeat: repeat;
-	background-size: 4%;
+	background: linear-gradient(90deg, #13111c 21px, transparent 1%) center,
+		linear-gradient(#13111c 21px, transparent 1%) center, #2b2933;
+	background-size: 23px 23px;
 	width: 100%;
 }
 
@@ -117,7 +133,7 @@ section {
 	background: var(--primary);
 }
 .active-btn i {
-	color: var(--white);
+	color: var(--control-white);
 }
 
 .control,
@@ -130,6 +146,7 @@ section {
 	width: calc(var(--spacer) * 5.5);
 	color: var(--text);
 	transition: var(--transition);
+	cursor: pointer;
 }
 
 .contact-controll {
@@ -156,7 +173,7 @@ section {
 
 .control:hover,
 .contact-controll:hover {
-	color: var(--white);
+	color: var(--control-white);
 }
 
 .control:hover::before,
@@ -172,7 +189,7 @@ section {
 	margin-left: 1rem;
 	opacity: 0;
 	pointer-events: none;
-	color: var(--primary);
+	color: var(--control-primary-color);
 	background: var(--white);
 	padding: calc(var(--spacer) * 0.75);
 	transition: var(--transition);
@@ -228,7 +245,7 @@ section {
 	left: 0;
 	font-size: 14px;
 	background: var(--primary);
-	color: var(--white);
+	color: var(--control-primary-color);
 	padding: 5px 8px;
 	border-radius: 5px;
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -283,6 +300,7 @@ section {
 	font-size: 1.3rem;
 	line-height: 2rem;
 	max-width: 650px;
+	color: var(--left-header-p);
 }
 
 .header__icons {
@@ -348,7 +366,7 @@ section {
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
-	border: 10px rgba(2, 255, 255, 0.15) solid;
+	border: 10px rgba(251, 2, 255, 0.15) solid;
 	animation: flicker2 0.2s infinite;
 	margin-left: auto;
 	margin-right: auto;
@@ -363,7 +381,7 @@ section {
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
-	border: 10px rgba(2, 255, 255, 0.15) solid;
+	border: 10px rgba(209, 2, 255, 0.15) solid;
 	animation: big_flicker 0.2s infinite;
 }
 
@@ -386,7 +404,7 @@ section {
 	height: 94%;
 	left: 3%;
 	top: 3%;
-	border: 5px solid #02feff;
+	border: 5px solid #af02ff;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
@@ -399,14 +417,14 @@ section {
 }
 
 .e5_1 {
-	color: rgba(2, 255, 255, 0.15);
+	color: rgba(255, 2, 251, 0.15);
 	border: 2px solid;
 	border-left: 2px solid transparent;
 	animation: rotate 5s linear infinite;
 }
 
 .e5_2 {
-	color: rgba(2, 255, 255, 0.7);
+	color: rgba(230, 2, 255, 0.7);
 	border: 4px solid;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
@@ -414,7 +432,7 @@ section {
 }
 
 .e5_3 {
-	color: rgba(2, 255, 255, 0.5);
+	color: rgba(225, 2, 255, 0.5);
 	border: 2px solid;
 	border-left: 2px solid transparent;
 	border-right: 2px solid transparent;
@@ -422,7 +440,7 @@ section {
 }
 
 .e5_4 {
-	color: rgba(2, 255, 255, 0.15);
+	color: rgba(255, 2, 234, 0.15);
 	border: 4px solid;
 	border-left: 4px solid transparent;
 	border-right: 4px solid transparent;
@@ -448,79 +466,79 @@ section {
 }
 @keyframes colour_ease {
 	0% {
-		border-color: #02feff;
+		border-color: #a202ff;
 	}
 	50% {
-		border-color: rgba(2, 254, 255, 0.5);
+		border-color: rgba(171, 2, 255, 0.5);
 	}
 	100% {
-		border-color: #02feff;
+		border-color: #a202ff;
 	}
 }
 @keyframes flicker {
 	0% {
-		box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 16px 8px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 	40% {
-		box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 16px 8px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 	50% {
-		box-shadow: 0px 0px 16px 6px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 100px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 16px 6px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 100px 2px rgba(173, 21, 233, 0.3);
 	}
 	60% {
-		box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 16px 8px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 	100% {
-		box-shadow: 0px 0px 16px 8px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 16px 8px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 }
 @keyframes flicker2 {
 	0% {
-		box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 60px 25px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 	40% {
-		box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 60px 25px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 	50% {
-		box-shadow: 0px 0px 50px 17px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 100px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 50px 17px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 100px 2px rgba(173, 21, 233, 0.3);
 	}
 	60% {
-		box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 60px 25px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 	100% {
-		box-shadow: 0px 0px 60px 25px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 4px 2px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 60px 25px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 4px 2px rgba(173, 21, 233, 0.3);
 	}
 }
 @keyframes big_flicker {
 	0% {
-		box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 40px 20px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 30px 15px rgba(173, 21, 233, 0.3);
 	}
 	40% {
-		box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 40px 20px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 30px 15px rgba(173, 21, 233, 0.3);
 	}
 	50% {
-		box-shadow: 0px 0px 35px 17px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 50px 40px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 35px 17px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 50px 40px rgba(173, 21, 233, 0.3);
 	}
 	60% {
-		box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 40px 20px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 30px 15px rgba(173, 21, 233, 0.3);
 	}
 	100% {
-		box-shadow: 0px 0px 40px 20px rgba(150, 255, 255, 0.5),
-			inset 0px 1px 30px 15px rgba(21, 211, 233, 0.3);
+		box-shadow: 0px 0px 40px 20px rgba(223, 150, 255, 0.5),
+			inset 0px 1px 30px 15px rgba(173, 21, 233, 0.3);
 	}
 }
 
@@ -532,15 +550,15 @@ section {
 	width: 500px;
 	height: 500px;
 	border-radius: 50%;
-	box-shadow: 0px 0px 50px 15px rgba(2, 255, 255, 0.3),
-		inset 0px 0px 50px 15px rgba(2, 255, 255, 0.3);
+	box-shadow: 0px 0px 50px 15px rgba(171, 2, 255, 0.3),
+		inset 0px 0px 50px 15px rgba(196, 2, 255, 0.3);
 }
 
 .marks li {
 	display: block;
 	width: 5px;
 	height: 15px;
-	background: rgba(2, 254, 255, 0.8);
+	background: rgba(183, 2, 255, 0.8);
 	position: absolute;
 	margin-left: 250px;
 	margin-top: -50px;
@@ -549,13 +567,13 @@ section {
 
 @keyframes colour_ease2 {
 	0% {
-		background: #02feff;
+		background: #c002ff;
 	}
 	50% {
-		background: rgba(2, 254, 255, 0.3);
+		background: rgba(183, 2, 255, 0.3);
 	}
 	100% {
-		background: #02feff;
+		background: #c002ff;
 	}
 }
 .marks li:first-child {
@@ -823,7 +841,11 @@ section {
 }
 
 .left-command p a {
-	color: var(--primary);
+	color: #BD3EF3;
+}
+
+.left-command p a:hover {
+	text-decoration: underline;
 }
 
 .left-command img {
@@ -847,7 +869,7 @@ section {
 	font-weight: 700;
 }
 .main-title h2 span {
-	color: var(--primary);
+	color: var(--main-title-primary);
 }
 .main-title p {
 	color: var(--title);
@@ -857,11 +879,15 @@ section {
 }
 
 .main-title p a {
-	color: var(--primary);
+	color: #9F33D9;
+}
+
+.main-title p a:hover {
+	text-decoration: underline;
 }
 
 .code-block {
-	background-color: #282c34;
+	background-color: #211F2D;
 	color: #abb2bf;
 	border-radius: 6px;
 	font-size: 16px;
@@ -878,13 +904,13 @@ section {
 .code-block pre code {
 	font-size: 16px;
 	font-family: 'Source Code Pro', monospace;
-	background-color: #282c34;
+	background-color: #211F2D;
 	color: #abb2bf;
 	border: none;
 }
 
 .code-block-yaml {
-	background-color: #1e1e1e;
+	background-color: #211F2D;
 	color: #d4d4d4;
 	font-size: 16px;
 	line-height: 1.5;
@@ -955,19 +981,53 @@ section {
 }
 
 .down-footer {
+	text-align: center;
 	font-size: 16px !important;
 }
 
+.down-footer-span {
+	display: flex;
+	align-items: center;
+	margin-top: 15px;
+	gap: 25px;
+}
+
+.telegram-span a {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	color: rgb(189, 62, 243);
+}
+
+.telegram-span a:hover {
+	text-decoration: underline;
+}
+
+.telegram-span a span {
+	color: #fff;
+}
+
 .github-span {
-	display: block;
+	display: flex;
 	text-align: center;
 }
 
 .github-span a {
-	color: var(--primary);
+	display: flex;
+	gap: 5px;
+	color: rgb(0, 170, 255);
+}
+
+.github-span a:hover {
+	text-decoration: underline;
+}
+
+.github-span a i {
+	font-size: 1.5rem;
 }
 
 .github-span span {
+	margin-left: 5px;
 	color: var(--title);
 }
 
@@ -1052,7 +1112,7 @@ section {
 }
 
 .code-block-yaml-examle {
-	background: #282c34;
+	background: #211F2D;
 }
 
 .folder-tree {

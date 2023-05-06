@@ -5,9 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap">
-	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="img/favicon-1.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/jarvis.css">
 	<link rel="stylesheet" href="css/style.css">
-	<title>Jarvis</title>
+	<title>Jarvis | Voice Assistant</title>
 </head>
 <body class="main-content">
 
@@ -114,8 +115,15 @@
 					<p>В этом примере мы используем AHK для выполнения команды "открыть браузер" и добавляем несколько фраз, которые Jarvis будет распознавать и связывать с этой командой. Если вам нужно добавить новую команду, просто добавьте новый блок кода в файл .yaml, описывающий действия и фразы, связанные с этой командой.</p>
 					<p>Когда Jarvis ожидает вашей команды, вы можете произнести ключевое слово, за которым следует команда. Например, "Jarvis, открой Google". Jarvis распознает вашу команду и запустит скрипт AutoHotkey, который откроет страницу Google в браузере.</p>
 
-					<h3 class='down-footer'>©2023. Автор Проекта: Abraham Tugalov 
-						<span class='github-span'><a href="https://github.com/Priler/jarvis">Github репозиторий</a> <span>проекта.</span></span>
+					<h3 class='down-footer'>© 2023. Автор Проекта: Abraham Tugalov 
+						<div class="down-footer-span">
+							<span class='telegram-span'>
+								<a href="https://t.me/howdyho_official"><img width='30px' src="img/128x128.jpg"> Наш телеграм<span>канал.</span></a>
+							</span>
+							<span class='github-span'>
+								<a href="https://github.com/Priler/jarvis"><i class="fa-brands fa-github"></i> Github репозиторий</a> <span>проекта.</span>
+							</span>
+						</div>
 					</h3>
 				</div>
 			</div>
@@ -124,63 +132,8 @@
 		<section class="section sec3 setting" id="setting">
 			<div class="main-title">
 				<h2>Editor <span>Jarvis</span></h2>
-				<p>Здесь реализован пример редактора команд для jarvis</p>
+				<p>Секция находится в режиме разработки</p>
 			</div>
-
-			<div class="folder-tree">
-				<div class="folder">
-					<span class="toggle"><i class="fa-solid fa-plus"></i></span>
-					<span class="icon"><i class="fa-solid fa-folder"></i></span>
-					<span class="name">jarvis</span>
-					<div class="subfolders hidden">
-						<div class="folder">
-							<span class="toggle"><i class="fa-solid fa-plus"></i></span>
-							<span class="icon"><i class="fa-solid fa-folder"></i></span>
-							<span class="name">Command</span>
-							<div class="subfolders hidden">
-								<div class="folder">
-									<span class="toggle"><i class="fa-solid fa-plus"></i></span>
-									<span class="icon"><i class="fa-solid fa-folder"></i></span>
-									<span class="name">Google</span>
-									<div class="subfolders hidden">
-										<div class="folder">
-											<span class="toggle"><i class="fa-solid fa-plus"></i></span>
-      										<span class="icon"><i class="fa-solid fa-folder"></i></span>
-											<span class="name">Ahk</span>
-											<div class="subfolders hidden">
-												<div class="file script">
-													<span class="icon"><i class="fa-solid fa-file-code"></i></span>
-													<span class="name">Run google.ahk</span>
-												</div>
-											</div>
-										</div>
-										<div class="folder">
-											<span class="icon"><i class="fa-solid fa-file-alt"></i></span>
-											<span class="name">command.yaml</span>
-											<div class="subfolders hidden">
-												<div class="file script">
-													<span class="icon"><i class="fa-solid fa-file-code"></i></span>
-													<span class="name">Command.yaml</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>		
-			
-			<div class="modal">
-				<div class="modal-content">
-				  <span class="close">&times;</span>
-				  <h2>Run google.ahk</h2>
-				  <textarea id="script-input" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
-				  <button id="run-script-btn">Save</button>
-				</div>
-			</div>
-			   
 		</section>
 
 		<section class="section sec4" id="helps">
@@ -189,7 +142,7 @@
 					<h2>Answer <span>Jarvis</span></h2>
 				</div>
 				<div class="faq-container">
-					<div class="faq-item">
+					<div class="faq-item">	
 					  <div class="faq-question">
 						<h3>Как запустить jarvis при запуске компютера?</h3>
 						<button class="faq-toggle"><i class="fa-solid fa-plus"></i></button>
@@ -256,13 +209,25 @@
 						  </p>
 						</div>
 					</div>
-					<div class="faq-item">
+					<div class="faq-item" id='faq-item'>
 						<div class="faq-question">
 						  <h3>Почему Джарвис столько жрет и много занимает оперативной памяти?</h3>
 						  <button class="faq-toggle"><i class="fa-solid fa-plus"></i></button>
 						</div>
 						<div class="faq-answer">
 						  <p>1. Относительно использования Microsoft Edge WebView2, это может быть связано с тем, что WebView2 использует движок Chromium, который может потреблять дополнительные ресурсы, но в то же время он может обеспечить лучшую производительность и совместимость с современными веб-технологиями.
+						  </p>
+						</div>
+					</div>
+					<div class="faq-item" id='faq-item'>
+						<div class="faq-question">
+						  <h3>Решение проблемы, появляется консоль пишет пару строк и исчезает</h3>
+						  <button class="faq-toggle"><i class="fa-solid fa-plus"></i></button>
+						</div>
+						<div class="faq-answer">
+						  <p>
+							Проблема появляется потому-что на пк не скачано ViewWeb2
+							Вам нужно установить ViewWeb2 с официального сайта на пк и проблема будет решена.
 						  </p>
 						</div>
 					</div>
@@ -877,6 +842,191 @@
 						</pre>
 					</div>
 				</div>
+				<div class="example-command">
+					<h3>16. Сверни окна</h3>
+					<p>Эта команда свернет все окна на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Roll up in pc
+
+							<span class="comment">WinMinimizeAll</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Roll up windows.exe.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- сверни все окна
+								- сверни окна
+								- разверни все окна
+								- разверни окна
+								- покажи все окна
+								- покажи окна
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>17. Cверни текущее окно</h3>
+					<p>Эта команда свернет только активное окно на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Minimize current in pc
+
+							<span class="comment">WinMinimize<span class='string'>,</span> A</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Minimize current window.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- сверни текущее окно
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>18. Выключи компьютер</h3>
+					<p>Эта команда выключит ваш пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Shutdown in pc
+
+							<span class="comment">Run<span class='string'>,</span> C:\Windows\System32\shutdown.exe <span class='string'>-</span>s <span class='string'>-</span>t 30</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/shutdown.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- выключи компьютер
+								- заверши работу
+								- выруби комп
+								- выключи комп
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>19. Перезагрузи компьютер</h3>
+					<p>Эта команда перезагрузит ваш пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Reload PC
+
+							<span class="comment">Shutdown<span class='string'>,</span> 6</span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/reload.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- перезагрузи компьютер
+								- перезагрузи комп
+						  </code>
+						</pre>
+					</div>
+				</div>
+				<div class="example-command">
+					<h3>20. Cмени раскладку</h3>
+					<p>Эта команда сменит раскладку на клавиатуре на вашем пк. Вам надо скомпилировать этот скрипт в exe.</p>
+
+					<div class="code-block code-block-example">
+						<pre>
+						  <code class="language-autohotkey">
+							; Set language
+
+							<span class="comment">Send, <span class="string">{</span>Shift down<span class="string">}</span><span class="string">{</span>Alt<span class="string">}</span><span class="string">{</span>Shift up<span class="string">}</span></span>
+						  </code>
+						</pre>
+					</div>
+
+					<h3>Command.yaml</h3>
+
+					<div class="code-block-yaml code-block-yaml-examle">
+						<pre>
+						  <code class="language-yaml">
+							<span class="string">command:</span>
+							action: ahk
+							exe_path: ahk/Set language.exe
+							exe_args:
+							  voice:
+							  <span class="string">sounds:</span>
+								- ok1
+								- ok2
+								- ok3
+								<span class="string">phrases:</span>
+								- перезагрузи компьютер
+								- смени раскладку
+								- поменяй раскладку
+								- смени язык
+								- поменяй язык
+								- переключи на русский
+								- переключи на английский
+						  </code>
+						</pre>
+					</div>
+				</div>
 
 				<div class="main-title">
 					<p>А больше команд вы можете найти <a href="https://github.com/Vasasago/commands-for-jarvis">здесь</a></p>
@@ -886,47 +1036,75 @@
 
 	</main>
 
-		<div class="navbar">
-			<div class="control control-1 active-btn" data-id="home">
-				<span>Home</span>				
-				<i class="fa-solid fa-house"></i>
-			</div>
-			<div class="control control-2" data-id="command">
-				<span>Commands</span>				
-				<i class="fa-solid fa-terminal"></i>
-			</div>
-			<div class="control control-3" data-id="setting">
-				<span>Settings</span>				
-				<i class="fa-solid fa-gear"></i>
-			</div>
-			<div class="control control-4" data-id="helps">
-				<span>Helps</span>				
-				<i class="fa-regular fa-circle-question"></i>
-			</div>
-			<div class="control control-5" data-id="example">
-				<span>Command_Exapmle</span>				
-				<i class="fa-solid fa-pen-nib"></i>
-			</div>
-			<a href='https://t.me/js_toop' class="contact-controll control-7">
-				<span>Автор_сайта</span>				
-				<i class="fa-solid fa-user"></i>
-			</a>
+	<div class="navbar">
+		<div class="control control-1 active-btn" data-id="home">
+			<span>Home</span>				
+			<i class="fa-solid fa-house"></i>
 		</div>
+		<div class="control control-2" data-id="command">
+			<span>Commands</span>				
+			<i class="fa-solid fa-terminal"></i>
+		</div>
+		<div class="control control-3" data-id="setting">
+			<span>Settings</span>				
+			<i class="fa-solid fa-gear"></i>
+		</div>
+		<div class="control control-4" data-id="helps">
+			<span>Helps</span>				
+			<i class="fa-regular fa-circle-question"></i>
+		</div>
+		<div class="control control-5" data-id="example">
+			<span>Command_Exapmle</span>				
+			<i class="fa-solid fa-pen-nib"></i>
+		</div>
+		<a href='https://t.me/js_toop' class="contact-controll control-7">
+			<span>Автор_сайта</span>				
+			<i class="fa-solid fa-user"></i>
+		</a>
+	</div>
 
-		<div class="theme-btn" onclick='toggleIcon()'>
-			<span class='themeBtn-tooltip'>Theme</span>
-			<i id="icon" class="fa-solid fa-moon"></i>
+	<div class="theme-btn" onclick='toggleIcon()'>
+		<span class='themeBtn-tooltip'>Theme</span>
+		<i id="icon" class="fa-solid fa-moon"></i>
+	</div>
+
+	<button id="toggleAssistant"><i class="fa-solid fa-angle-up"></i></button>
+
+	<!-- Jarvis assistant -->
+	<div id="assistant">
+		<div class="header">
+			<h2>Jarvis</h2>
+			<p class="subtitle">How can I assist you?</p>
 		</div>
+		<button id="startBtn"><i class="fa-solid fa-microphone"></i></button>
+		<button id="commandBtn"><i class="fa-solid fa-terminal"></i></button>
+		<div id="commands">
+			<h3 class='commands-title'>Default Commands:</h3>
+			<ul>
+				<li>1. Открой YouTube</li>
+				<li>2. Открой ChatGpt</li>
+				<li>3. Открой переводчик</li>
+				<li>4. Запусти музыку</li>
+				<li>5. Открой Github</li>
+				<li>6. Открой калькулятор</li>
+				<li>7. Stop</li>
+			</ul>
+		</div>
+	</div>
 		
-		<audio id="click-sound" src="sound/ok2.wav"></audio>
+	<audio id="click-sound" src="sound/ok2.wav"></audio>
 
 	<script src='js/app.js'></script>
+	<script src='js/SmoothScroll.js'></script>
+	<script src='js/recognition.js'></script>
+	<script src='js/assistant.js'></script>
 	<script src='js/theme.js'></script>
 	<script src='js/sphere.js'></script>
 	<script src='js/command.js'></script>
 	<script src='js/questions.js'></script>
 	<script src='js/audio.js'></script>
 	<script src='js/main.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/27c5a00e8d.js" crossorigin="anonymous"></script>
 </body>
 </html>

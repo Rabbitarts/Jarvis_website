@@ -18,3 +18,12 @@ controls.forEach(control => {
 		clickSound.play()
 	})
 })
+
+const faqItems = document.querySelectorAll('.faq-item')
+const faqAudio = new Audio('sound/ok1.wav')
+
+faqItems.forEach(faqItem => {
+	faqItem.addEventListener('click', () => {
+		faqAudio.play()
+	})
+})
